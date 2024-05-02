@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col s12">
                     
-                <h1>Ajouter un etudiant</h1>
+                <h1>ADD A STUDENT</h1>
                 <hr>
                 @if(session('status'))
                 <div class="alert alert-success">
@@ -27,23 +27,23 @@
                 <form class="form-group" action="/ajouter/traitement" method="POST">
                     @csrf
                         <div class="mb-3">
-                            <label for="nom" class="form-label">NOM</label>
+                            <label for="nom" class="form-label">Lastname</label>
                             <input type="text" class="form-control" id="nom" name="nom">    
                         </div>
 
                         <div class="mb-3">
-                            <label for="prenom" class="form-label">PRENOM</label>
+                            <label for="prenom" class="form-label">Firstname</label>
                             <input type="text" class="form-control" id="prenom" name="prenom">    
                         </div>
 
                         <div class="mb-3">
-                            <label for="classe" class="form-label">Classe</label>
+                            <label for="classe" class="form-label">Class</label>
                             <input type="text" class="form-control" id="classe" name="classe">    
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Ajouter un etudiant</button>
+                        <button type="submit" class="btn btn-primary">Add student</button>
                         <br><br>
-                        <a href="/etudiant" class="btn btn-danger">Retour a la liste des etudiants</a>
+                        <a href="/etudiant" class="btn btn-danger">Return to the list of students</a>
                 </form>                
            
       

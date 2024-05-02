@@ -9,7 +9,7 @@ class EtudiantController extends Controller
 {
     public function liste_etudiant()
     {
-        $etudiants = Etudiant::paginate(4);
+        $etudiants = Etudiant::paginate(6);
         return view('etudiant.liste',compact('etudiants'));
     }
 
@@ -32,7 +32,7 @@ class EtudiantController extends Controller
         $etudiant->classe = $request->classe;
         $etudiant->save();
 
-        return redirect('/ajouter')->with('status','L\'etudiant a  bien ete ajoute avec succes');
+        return redirect('/ajouter')->with('status','The student has been successfully added');
     }
 
     public function update_etudiant($id)
@@ -56,12 +56,12 @@ class EtudiantController extends Controller
         $etudiant->classe = $request->classe;
         $etudiant->update();
 
-        return redirect('/etudiant')->with('status','L\'etudiant a  bien ete modifie avec succes');
+        return redirect('/etudiant')->with('status','The student has been successfully updated');
     }
     public function delete_etudiant($id)
     {
         $etudiants = Etudiant::find($id);
         $etudiants->delete();
-        return redirect('/etudiant')->with('status','L\'etudiant a  bien ete supprime avec succes');
+        return redirect('/etudiant')->with('status','The student has been successfully deleted');
     }
 }

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col s12">
                     
-                <h1>Modifier un etudiant</h1>
+                <h1>Update a student</h1>
                 <hr>
                 @if(session('status'))
                 <div class="alert alert-success">
@@ -26,27 +26,28 @@
 
                 <form class="form-group"  action="/update/traitement" method="POST">
                     @csrf
-                    
+                    <div class="card">
                         <input type="hidden" style="display :none; " name="id" value="{{ $etudiants->id }}">
 
                         <div class="mb-3">
-                            <label for="nom" class="form-label">NOM</label>
+                            <label for="nom" class="form-label">Lastname</label>
                             <input type="text" class="form-control" id="nom" name="nom" value="{{ $etudiants->nom }}">    
                         </div>
 
                         <div class="mb-3">
-                            <label for="prenom" class="form-label">PRENOM</label>
+                            <label for="prenom" class="form-label">Firstname</label>
                             <input type="text" class="form-control" id="prenom" name="prenom" value="{{ $etudiants->prenom }}">    
                         </div>
 
                         <div class="mb-3">
-                            <label for="classe" class="form-label">Classe</label>
+                            <label for="classe" class="form-label">Class</label>
                             <input type="text" class="form-control" id="classe" name="classe" value="{{ $etudiants->classe }}">    
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Modifier un etudiant</button>
+                        <button type="submit" class="btn btn-primary">Update a student</button>
                         <br><br>
-                        <a href="/etudiant" class="btn btn-danger">Retour a la liste des etudiants</a>
+                        <a href="/etudiant" class="btn btn-danger">Return to the list of students</a>
+                    </div>
                 </form>                
            
       
