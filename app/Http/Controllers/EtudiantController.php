@@ -32,7 +32,7 @@ class EtudiantController extends Controller
         $etudiant->classe = $request->classe;
         $etudiant->save();
 
-        return redirect('/ajouter')->with('status','The student has been successfully added');
+        return redirect('/etudiant')->with('status','The student has been successfully added');
     }
 
     public function update_etudiant($id)

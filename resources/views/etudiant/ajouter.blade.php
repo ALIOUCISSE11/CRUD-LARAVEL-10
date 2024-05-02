@@ -17,12 +17,23 @@
                 <div class="alert alert-success">
                     {{session('status')}}
                 </div>
+              
                 @endif 
                 <ul>
                 @foreach($errors->all() as $error)
                     <li class="alert alert-danger">{{ ($error) }}</li>
                 @endforeach
                 </ul>
+                <!---- Formulaire d'ajout d'un étudiant ---->
+
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header text-center text-muted">
+                            <marquee behavior="alternate" direction="">  Student addition form</marquee>
+                                </div>
+                                <div class="card-body">
 
                 <form class="form-group" action="/ajouter/traitement" method="POST">
                     @csrf
@@ -44,14 +55,16 @@
                         <button type="submit" class="btn btn-primary">Add student</button>
                         <br><br>
                         <a href="/etudiant" class="btn btn-danger">Return to the list of students</a>
-                </form>                
-           
+                 </form>                
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
       
 
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

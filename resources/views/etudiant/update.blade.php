@@ -23,31 +23,46 @@
                     <li class="alert alert-danger">{{ ($error) }}</li>
                 @endforeach
                 </ul>
-
+                <!--- Formulaire de modification d'un étudiant ---->
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header text-center text-muted">
+                            <marquee behavior="" direction="">  Student modification form</marquee>
+                                </div>
+                                <div class="card-body">
                 <form class="form-group"  action="/update/traitement" method="POST">
                     @csrf
-                    <div class="card">
-                        <input type="hidden" style="display :none; " name="id" value="{{ $etudiants->id }}">
+                    <div class="card-body">
+                        <input type="hidden" style="display :none; " name="id" value="{{ $etudiants->id }}" autofocus>
 
                         <div class="mb-3">
                             <label for="nom" class="form-label">Lastname</label>
-                            <input type="text" class="form-control" id="nom" name="nom" value="{{ $etudiants->nom }}">    
+                            <input type="text" class="form-control" id="nom" name="nom" value="{{ $etudiants->nom }}" autofocus>    
                         </div>
 
                         <div class="mb-3">
                             <label for="prenom" class="form-label">Firstname</label>
-                            <input type="text" class="form-control" id="prenom" name="prenom" value="{{ $etudiants->prenom }}">    
+                            <input type="text" class="form-control" id="prenom" name="prenom" value="{{ $etudiants->prenom }}" autofocus>    
                         </div>
 
                         <div class="mb-3">
                             <label for="classe" class="form-label">Class</label>
-                            <input type="text" class="form-control" id="classe" name="classe" value="{{ $etudiants->classe }}">    
+                            <input type="text" class="form-control" id="classe" name="classe" value="{{ $etudiants->classe }}" autofocus>    
                         </div>
-                        
+                        <div>
                         <button type="submit" class="btn btn-primary">Update a student</button>
                         <br><br>
                         <a href="/etudiant" class="btn btn-danger">Return to the list of students</a>
+                        </div>
                     </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
                 </form>                
            
       
